@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: knockknock
+Version: 0.8
+Summary: A cryptographic single-packet port-knocker.
+Home-page: http://www.thoughtcrime.org/software/knockknock/
+Author: Moxie Marlinspike
+Author-email: moxie@thoughtcrime.org
+License: GPL
+Description: UNKNOWN
+Platform: UNKNOWN
