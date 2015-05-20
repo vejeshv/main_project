@@ -33,20 +33,20 @@ class KnockWatcher:
         self.profiles   = profiles
         self.portOpener = portOpener
 
-    def getProfile(self, sourceIP):
+    def getProfile(sourceIP):
     	homedir = os.path.expanduser('~')
 	if not os.path.isdir(homedir + '/.knockknock/'):
             syslog.syslog("Error: you need to setup your profiles in " + homedir + '/.knockknock/')
             sys.exit(2)
 
-    	if not os.path.isdir(homedir + '/.knockknock/' + sourceIP):
+    	if not os.path.isdir(homedir + '/.knockknock/' + host):
             syslog.syslog("Error: profile for host " + sourceIP + " not found at " + homedir + "/.knockknock/" + sourceIP)
             sys.exit(2)
 
-        return Profile(homedir + '/.knockknock/' + sourceIP)
+        return Profile(homedir + '/.knockknock/' + host)
 			
 
-    def existsInPath(self, command):
+    def existsInPath(command):
     	def isExe(fpath):
             return os.path.exists(fpath) and os.access(fpath, os.X_OK)
 
@@ -104,4 +104,4 @@ class KnockWatcher:
                         pass
             except Exception as e:
 #                print "Unexpected error:", sys.exc_info()
-                syslog.syslog("knocknock skipping unrecognized line" + str(e))
+                syslog.syslog("knocknock skipping unrecognized line" + e)

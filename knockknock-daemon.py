@@ -61,7 +61,7 @@ def handleFirewall(input, config):
     portOpener.waitForRequests()
 
 def handleKnocks(output, profiles, config):
-#    dropPrivileges()
+    dropPrivileges()
     
     logFile      = LogFile('/var/log/kern.log')
     portOpener   = PortOpener(output, config.getDelay())
